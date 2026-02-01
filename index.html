@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPadiFood - Food Ordering Platform</title>
+    <meta name="description" content="Connect with local food businesses and order your favorite meals">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-50 min-h-screen">
+    <!-- Header -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl font-bold text-green-600">MyPadiFood</span>
+                </div>
+                <a href="https://chrenisfarm.mypadifood.com" 
+                   class="text-green-600 hover:text-green-700 font-medium">
+                    View Businesses
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center animate-fade-in">
+            <!-- Logo/Icon -->
+            
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Welcome to <span class="text-green-600">MyPadiFood</span>
+            </h1>
+            
+            <!-- Subheading -->
+            <p class="text-xl md:text-2xl text-gray-600 mb-4 max-w-2xl mx-auto">
+                Bringing your favorite local store closer to you 
+            </p>
+            
+            <p class="text-lg text-gray-500 mb-12 max-w-xl mx-auto">
+                Order from your local store. Fresh, fast, and convenient.
+            </p>
+            
+            <!-- CTA Button -->
+            <div class="space-y-4">
+                <a href="https://chrenisfarm.mypadifood.com" 
+                   class="inline-block bg-green-600 text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-all transform hover:scale-105 shadow-lg">
+                    🏪 Browse Available Businesses
+                </a>
+                
+                <p class="text-sm text-gray-500">
+                    Discover businesses that have enrolled on our platform
+                </p>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="mt-24 grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                <div class="text-4xl mb-4">🛒</div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Easy Ordering</h3>
+                <p class="text-gray-600">Browse and place orders in just a few clicks</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                <div class="text-4xl mb-4">⚡</div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Fast Delivery</h3>
+                <p class="text-gray-600">Get your favorite items delivered quickly</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                <div class="text-4xl mb-4">💳</div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Secure Payment</h3>
+                <p class="text-gray-600">Multiple payment options for your convenience</p>
+            </div>
+        </div>
+
+        <!-- Business Spotlight -->
+        <div class="mt-24 bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Business</h2>
+            <p class="text-xl text-green-600 font-semibold mb-2">Chreni's Farm</p>
+            <p class="text-gray-600 mb-6">Fresh, organic farm produce and delicious farm-to-table meals</p>
+            <a href="https://chrenisfarm.mypadifood.com" 
+               class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                Order Now →
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-20 border-t">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <p class="text-gray-600 mb-2">
+                    <span class="font-semibold text-gray-900">MyPadiFood</span>
+                </p>
+                <p class="text-gray-500 text-sm">
+                    © 2026 MyPadiFood. All rights reserved.
+                </p>
+                <div class="mt-4">
+                    <a href="https://wa.me/2348110252143" 
+                       class="text-green-600 hover:text-green-700 text-sm">
+                        📱 Contact Support on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
