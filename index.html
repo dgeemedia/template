@@ -3,29 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyPadiFood - Food Ordering Platform</title>
+    <title>MyPadiFood - Local Business Ordering Platform</title>
     <meta name="description" content="Connect with local food businesses and order your favorite meals">
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .animate-fade-in {
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+            min-height: 100vh;
+        }
+        
+        nav {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #10b981;
+        }
+        
+        .nav-link {
+            color: #10b981;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #059669;
+        }
+        
+        main {
+            padding: 5rem 1rem;
+        }
+        
+        .hero {
+            text-center;
             animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 1.5rem;
+        }
+        
+        .brand {
+            color: #10b981;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .description {
+            font-size: 1.125rem;
+            color: #6b7280;
+            margin-bottom: 3rem;
+            max-width: 36rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-section {
+            margin-bottom: 6rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            background: #059669;
+            transform: scale(1.05);
+        }
+        
+        .cta-note {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 6rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-text {
+            color: #4b5563;
+        }
+        
+        .spotlight {
+            margin-top: 6rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .spotlight h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        
+        .spotlight-name {
+            font-size: 1.25rem;
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .spotlight-desc {
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+        
+        .spotlight-button {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .spotlight-button:hover {
+            background: #059669;
+        }
+        
+        footer {
+            background: white;
+            margin-top: 5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .footer-content {
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-brand {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-brand-name {
+            font-weight: 600;
+            color: #111827;
+        }
+        
+        .footer-copyright {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .footer-contact {
+            margin-top: 1rem;
+        }
+        
+        .footer-link {
+            color: #10b981;
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+        
+        .footer-link:hover {
+            color: #059669;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .spotlight {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-green-50 to-emerald-50 min-h-screen">
+<body>
     <!-- Header -->
-    <nav class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <span class="text-2xl font-bold text-green-600">MyPadiFood</span>
-                </div>
-                <a href="https://chrenisfarm.mypadifood.com" 
-                   class="text-green-600 hover:text-green-700 font-medium">
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">MyPadiFood</div>
+                <a href="https://chrenisfarm.mypadifood.com" class="nav-link">
                     View Businesses
                 </a>
             </div>
@@ -33,83 +277,78 @@
     </nav>
 
     <!-- Hero Section -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="text-center animate-fade-in">
-            <!-- Logo/Icon -->
-            
+    <main class="container">
+        <div class="hero">
             <!-- Main Heading -->
-            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Welcome to <span class="text-green-600">MyPadiFood</span>
+            <h1>
+                Welcome to <span class="brand">MyPadiFood</span>
             </h1>
             
             <!-- Subheading -->
-            <p class="text-xl md:text-2xl text-gray-600 mb-4 max-w-2xl mx-auto">
-                Bringing your favorite local store closer to you 
+            <p class="subtitle">
+                Bringing your favorite local store closer to you
             </p>
             
-            <p class="text-lg text-gray-500 mb-12 max-w-xl mx-auto">
+            <p class="description">
                 Order from your local store. Fresh, fast, and convenient.
             </p>
             
             <!-- CTA Button -->
-            <div class="space-y-4">
-                <a href="https://chrenisfarm.mypadifood.com" 
-                   class="inline-block bg-green-600 text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-all transform hover:scale-105 shadow-lg">
+            <div class="cta-section">
+                <a href="https://chrenisfarm.mypadifood.com" class="cta-button">
                     🏪 Browse Available Businesses
                 </a>
                 
-                <p class="text-sm text-gray-500">
+                <p class="cta-note">
                     Discover businesses that have enrolled on our platform
                 </p>
             </div>
         </div>
 
         <!-- Features Section -->
-        <div class="mt-24 grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                <div class="text-4xl mb-4">🛒</div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Easy Ordering</h3>
-                <p class="text-gray-600">Browse and place orders in just a few clicks</p>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🛒</div>
+                <h3 class="feature-title">Easy Ordering</h3>
+                <p class="feature-text">Browse and place orders in just a few clicks</p>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                <div class="text-4xl mb-4">⚡</div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Fast Delivery</h3>
-                <p class="text-gray-600">Get your favorite items delivered quickly</p>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Fast Delivery</h3>
+                <p class="feature-text">Get your favorite items delivered quickly</p>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                <div class="text-4xl mb-4">💳</div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Secure Payment</h3>
-                <p class="text-gray-600">Multiple payment options for your convenience</p>
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3 class="feature-title">Secure Payment</h3>
+                <p class="feature-text">Multiple payment options for your convenience</p>
             </div>
         </div>
 
         <!-- Business Spotlight -->
-        <div class="mt-24 bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Business</h2>
-            <p class="text-xl text-green-600 font-semibold mb-2">Chreni's Farm</p>
-            <p class="text-gray-600 mb-6">Fresh, organic farm produce and delicious farm-to-table meals</p>
-            <a href="https://chrenisfarm.mypadifood.com" 
-               class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+        <div class="spotlight">
+            <h2>Featured Business</h2>
+            <p class="spotlight-name">Chreni's Farm</p>
+            <p class="spotlight-desc">Fresh, organic farm produce and delicious farm-to-table meals</p>
+            <a href="https://chrenisfarm.mypadifood.com" class="spotlight-button">
                 Order Now →
             </a>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white mt-20 border-t">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="text-center">
-                <p class="text-gray-600 mb-2">
-                    <span class="font-semibold text-gray-900">MyPadiFood</span>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">
+                    <span class="footer-brand-name">MyPadiFood</span>
                 </p>
-                <p class="text-gray-500 text-sm">
+                <p class="footer-copyright">
                     © 2026 MyPadiFood. All rights reserved.
                 </p>
-                <div class="mt-4">
-                    <a href="https://wa.me/2348110252143" 
-                       class="text-green-600 hover:text-green-700 text-sm">
+                <div class="footer-contact">
+                    <a href="https://wa.me/2348110252143" class="footer-link">
                         📱 Contact Support on WhatsApp
                     </a>
                 </div>
